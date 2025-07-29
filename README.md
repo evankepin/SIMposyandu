@@ -1,66 +1,118 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SIMPosyandu - Sistem Informasi Manajemen Posyandu
+[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/evankepin/SIMposyandu.git)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+SIMPosyandu is a web-based application built with the Laravel framework to manage and monitor child health data at a Posyandu (Integrated Health Post). This system is designed to streamline data management for administrators, health cadres (kader), and parents (orang tua).
 
-## About Laravel
+## Key Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The application provides functionalities tailored to three distinct user roles: Admin, Kader (Health Cadre), and Orang Tua (Parent).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 1. Admin Portal (`/admin`)
+The admin has full control over the system's data and users.
+- **Dashboard:** An overview of the management modules.
+- **User Management:** Create, read, update, and delete Kader and Orang Tua user accounts.
+- **Balita (Toddler) Data:** Full CRUD operations for toddler profiles.
+- **Jadwal Posyandu:** Manage schedules for Posyandu activities.
+- **Vendor Management:** Manage data for vendors supplying vitamins and vaccines.
+- **Vitamin & Imunisasi Data:** Manage the list of available vitamins and immunizations.
+- **KMS (Child Growth Chart) Records:** Full access to view, add, edit, and delete KMS records for all toddlers.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 2. Kader (Health Cadre) Portal (`/kader`)
+Kaders are responsible for on-the-ground data entry and management.
+- **Dashboard:** A simplified dashboard with quick access to essential features.
+- **Balita (Toddler) Data:** Add, view, update, and delete toddler profiles.
+- **KMS (Child Growth Chart) Records:** Input and manage health check-up data for toddlers, including weight, height, and immunizations administered.
 
-## Learning Laravel
+### 3. Orang Tua (Parent) Portal (`/orangtua`)
+Parents can monitor their children's health and stay informed.
+- **Dashboard:** A personalized view for parents.
+- **Data Balita Saya:** View detailed profiles and health records (KMS) for their own children.
+- **Jadwal Posyandu:** View upcoming Posyandu schedules and activities.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Technology Stack
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Backend:** PHP 8.1+, Laravel 10
+- **Frontend:** Bootstrap 5, Sass, Vite
+- **Database:** MySQL
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Getting Started
 
-## Laravel Sponsors
+Follow these steps to set up and run the project on your local machine.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+### Prerequisites
 
-### Premium Partners
+- PHP >= 8.1
+- Composer
+- Node.js & NPM
+- A database server (e.g., MySQL)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+### Installation
 
-## Contributing
+1.  **Clone the repository:**
+    ```sh
+    git clone https://github.com/evankepin/SIMposyandu.git
+    cd simposyandu
+    ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+2.  **Install PHP dependencies:**
+    ```sh
+    composer install
+    ```
 
-## Code of Conduct
+3.  **Install JavaScript dependencies:**
+    ```sh
+    npm install
+    ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+4.  **Set up the environment file:**
+    ```sh
+    cp .env.example .env
+    ```
 
-## Security Vulnerabilities
+5.  **Generate an application key:**
+    ```sh
+    php artisan key:generate
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6.  **Configure your database:**
+    Open the `.env` file and set your database credentials (DB_DATABASE, DB_USERNAME, DB_PASSWORD).
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=simposyandu
+    DB_USERNAME=root
+    DB_PASSWORD=
+    ```
 
-## License
+7.  **Run database migrations:**
+    This will create all the necessary tables in your database.
+    ```sh
+    php artisan migrate
+    ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+8.  **Compile frontend assets:**
+    ```sh
+    npm run build
+    ```
+    For development, you can use:
+    ```sh
+    npm run dev
+    ```
+
+9.  **Start the development server:**
+    ```sh
+    php artisan serve
+    ```
+    The application will be available at `http://127.0.0.1:8000`.
+
+## Usage
+
+After installation, you can access the application. Since there are no default seeders, you will need to create user accounts.
+
+1.  **Register a User:** The public registration form at `/register` creates a user with the default `orangtua` (parent) role.
+2.  **Create Admin/Kader:** To create an `admin` or `kader`, you can manually change a user's role in the `users` table in your database or create a custom seeder.
+3.  **Access Portals:**
+    - **Admin:** Log in with an admin account and navigate to `/admin/dashboard`.
+    - **Kader:** Log in with a kader account and navigate to `/kader/dashboard`.
+    - **Orang Tua:** Log in with an orang tua account and navigate to `/orangtua/dashboard`.
