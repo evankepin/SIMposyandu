@@ -1,5 +1,5 @@
 # SIMPosyandu - Sistem Informasi Manajemen Posyandu
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/evankepin/SIMposyandu.git)
+
 
 SIMPosyandu is a web-based application built with the Laravel framework to manage and monitor child health data at a Posyandu (Integrated Health Post). This system is designed to streamline data management for administrators, health cadres (kader), and parents (orang tua).
 
