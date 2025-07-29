@@ -116,3 +116,7 @@ After installation, you can access the application. Since there are no default s
     - **Admin:** Log in with an admin account and navigate to `/admin/dashboard`.
     - **Kader:** Log in with a kader account and navigate to `/kader/dashboard`.
     - **Orang Tua:** Log in with an orang tua account and navigate to `/orangtua/dashboard`.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
